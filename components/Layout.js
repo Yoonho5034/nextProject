@@ -1,12 +1,10 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  /* width: 100%;
-  max-width: 1120px; */
-  width: 1120px;
+  width: 1280px;
   height: 100vh;
   margin: 0 auto;
-  /* background-color: gray; */
+  background-color: orange;
 `;
 
 const Layout = ({ children }) => {

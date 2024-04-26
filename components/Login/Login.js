@@ -1,12 +1,13 @@
 import * as S from "./Login.style";
 import React from "react";
+import { useRouter } from "next/router";
 
 const Login = ({ isLogin, setIsLogin }) => {
   const [userInfo, setUserInfo] = React.useState({
     userID: "",
     userPassword: null,
   });
-
+  const router = useRouter();
   const [userID, setUserID] = React.useState("");
   const [userPassword, setUserPassword] = React.useState("");
 
@@ -14,6 +15,12 @@ const Login = ({ isLogin, setIsLogin }) => {
     setUserInfo({ userID: userID, userPassword: userPassword });
     setIsLogin(true);
   };
+
+  React.useEffect(() => {
+    if (isLogin) {
+      router.push("/main");
+    }
+  }, [isLogin]);
   return (
     <S.Container>
       <S.InputsArea>
